@@ -36,6 +36,7 @@ export const Authentication = () => {
     setCanSignIn(emailIsValid && passwordIsValid);
   }, [email, password]);
   useEffect(() => {
+    console.log()
     if (isAuthenticated) history.replace("/");
   }, [isAuthenticated, history]);
   return (
