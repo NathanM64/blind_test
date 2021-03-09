@@ -1,14 +1,17 @@
 import React from 'react';
-import Router  from './router';
+import Navigation  from './common/Navigation';
 import './App.css';
-import {BrowserRouter as BRouter} from 'react-router-dom'; 
+import { Provider } from "react-redux";
+import { store } from "./common/store";
 
-function App() {
-  return (
-    <div>
-        <BRouter><Router/></BRouter>
-    </div>
-  );
-}
+const App = () => {
+  return(
+    <Provider store={store}>
+      <div className="App">
+        <Navigation />
+      </div>
+    </Provider>
+  )
+};
 
 export default App;
