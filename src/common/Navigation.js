@@ -14,7 +14,7 @@ import { launchSequence, launchApp } from "./appEffects";
 import Home from '../pages/Home'
 import Game from '../pages/Game/Game'
 import Profile from '../pages/User/Profile'
-import {NavBar, NavImage, NameApp, NavActionLink, NavSignOut, SignOut} from './Navigation.style'
+import {NavBar, NavImage, NameApp, NavActionLink, NavSignOut, NavLink, SignOut} from './Navigation.style'
 
 const PrivateRoute = ({ children, ...rest }) => {
   const isAuthenticated = useSelector(
@@ -68,8 +68,8 @@ const Navigation = () => {
                 Blind-Test
               </NameApp>
               <NavActionLink>
-                <Link to="/play">Jouer</Link>
-                <Link to="/profile">Profile</Link>
+                <NavLink to="/play">Jouer</NavLink>
+                <NavLink to="/profile">Profile</NavLink>
               </NavActionLink>
               <NavSignOut>
                 <SignOut
@@ -77,8 +77,8 @@ const Navigation = () => {
                   onClick={() => disconnectUser()}
                 >
                   Se déconnecter
-                  <NavImage src={player.avatar} alt="User avatar" />
                 </SignOut>
+                <NavImage src={player.avatar} alt="User avatar" />
               </NavSignOut>
             </NavBar>
           ) : undefined}
