@@ -16,7 +16,14 @@ export const NameApp = styled(Link)`
     display: flex;
     flex-direction: row;
     align-items: center;
-    flex: 1;
+
+    border-radius: 5px;
+    padding: 5px;
+
+    :hover {
+        background: black;
+        color: white;
+    }
 `
 
 export const NavImage = styled.img`
@@ -26,16 +33,32 @@ export const NavImage = styled.img`
     border-radius: 1.5em;
 `
 export const NavActionLink = styled.div`
-    display: flex;
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
+    position: relative;
+    margin: 0 auto;
+`
+export const NavLink = styled(Link)`
+    padding: 15px;
+    margin: 15px;
+    border-radius: 5px;
+    :hover {
+        background: black;
+        color: white;
+    }
 `
 export const NavSignOut = styled.div`
     padding: 5px;
+    display: flex;
+    border-radius: 5px;
+    padding: 5px;
+
+    :hover {
+        background: black;
+        color: white;
+    }
 `
 export const SignOut = styled(Link)`
     display: flex;
     align-items: center;
+    margin-right: 10px;
 `
 
