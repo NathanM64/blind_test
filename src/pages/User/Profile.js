@@ -4,7 +4,6 @@ import { ProfileCard, Avatar, Title } from "./Profile.style.js"
 
 const Profile = () => {
     const player = useSelector((state) => state.user.player);
-    console.log(player);
     return (
         <ProfileCard>
             <Title>{player.name}</Title>
