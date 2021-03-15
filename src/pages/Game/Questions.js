@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { QuestionsWrapper } from './index.style';
 
-const Questions = () => {
+const Questions = ({ data, chooseAnswer, startTime }) => {
+
+    const [sound, setSound] = useState();
+
     return (
         <QuestionsWrapper>
             

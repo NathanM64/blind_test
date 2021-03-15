@@ -34,13 +34,17 @@ const Game = () => {
     return (
         <GameWrapper>
             <h1>Game</h1>
-            {/* {answers && answers.length > 0 ? (
+            {answers && answers.length > 0 ? (
+                <LayoutGame>
+
+                </LayoutGame>
+            ) : questions && questions.length > 0 ? (
                 <LayoutGame>
 
                 </LayoutGame>
             ) : questions && questions.length > 0 ? (
                 
-            )} */}
+            )}
         </GameWrapper>
     )
 }
