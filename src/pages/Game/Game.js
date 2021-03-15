@@ -19,7 +19,7 @@ const Game = () => {
                 setAnswers([]);
                 setScore(-1);
                 setQuestions(questions);
-                console.log(questions);
+                // console.log(questions);
             }
         });
     };
@@ -28,7 +28,7 @@ const Game = () => {
         const score = await api.submitAnswers(answers);
         setScore(score);
         setAnswers(answers);
-        console.log("Score:", score);
+        // console.log("Score:", score);
         dispatch(incrementPlayerNbPlayed());
     };
 

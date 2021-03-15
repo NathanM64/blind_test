@@ -16,13 +16,26 @@ const Question = ({ data, chooseAnswer, startTime }) => {
     const Answer = ({ answerIndex }) => (
         <Card onClick={() => makeChoice(answerIndex)}>
             {data.type === "image" ? (
-                <Image src={{ uri: data.answers[answerIndex]}} />
+                <Image src={data.answers[answerIndex]} />
             ) : (
                 <Text>{data.answers[answerIndex]}</Text>
             )}
         </Card>
     );
 
+    function randomize(tab) {
+        var i, j, tmp;
+        for (i = tab.length - 1; i > 0; i--) {
+            j = Math.floor(Math.random() * (i + 1));
+            tmp = tab[i];
+            tab[i] = tab[j];
+            tab[j] = tmp;
+        }
+        return tab;
+    }
+
+    let indexTab = [0, 1, 2, 3];
+    indexTab = randomize(indexTab);
     return (
         <QuestionsWrapper>
             <h5>
@@ -31,14 +44,15 @@ const Question = ({ data, chooseAnswer, startTime }) => {
             <ReactAudioPlayer 
                 src={data.audio_url}
                 autoPlay={true}
+                controls={true}
             />
             <QuestionsLayout>
-                <Answer answerIndex={1} />
-                <Answer answerIndex={2} />
+                <Answer answerIndex={indexTab[0]} />
+                <Answer answerIndex={indexTab[1]} />
             </QuestionsLayout>
             <QuestionsLayout>
-                <Answer answerIndex={3} />
-                <Answer answerIndex={4} />
+                <Answer answerIndex={indexTab[2]} />
+                <Answer answerIndex={indexTab[3]} />
             </QuestionsLayout>
         </QuestionsWrapper>
     )

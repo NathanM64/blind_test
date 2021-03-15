@@ -11,7 +11,7 @@ const Gameplay = ({ questions, finishGame }) => {
     const currentQuestion = questions[currentQuestionIndex];
     const chooseAnswer = (answer) => {
         const newAnswers = [...answers, answer];
-        console.log(questions.length, currentQuestionIndex);
+        // console.log(questions.length, currentQuestionIndex);
         if (questions.length - 1 > currentQuestionIndex) {
             setAnswers(newAnswers);
             setCurrentQuestionIndex(currentQuestionIndex + 1);
