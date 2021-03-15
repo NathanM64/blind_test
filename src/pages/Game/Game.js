@@ -33,7 +33,7 @@ const Game = () => {
 
     return (
         <GameWrapper>
-            <h1>Game</h1>
+            {/* <h1>Game</h1>
             {answers && answers.length > 0 ? (
                 <LayoutGame>
 
@@ -44,7 +44,7 @@ const Game = () => {
                 </LayoutGame>
             ) : questions && questions.length > 0 ? (
                 
-            )}
+            )} */}
         </GameWrapper>
     )
 }
