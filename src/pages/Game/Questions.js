@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Card, Image, QuestionsLayout, QuestionsWrapper, Text } from './index.style';
+import ReactAudioPlayer from 'react-audio-player';
 
 const Question = ({ data, chooseAnswer, startTime }) => {
 
@@ -22,29 +23,15 @@ const Question = ({ data, chooseAnswer, startTime }) => {
         </Card>
     );
 
-    useEffect(() => {
-        return () => {
-            if (sound) {
-                console.log("Unloading Sound")
-                sound.unloadAsync();
-            }
-        };
-    }, [sound]);
-
-    useEffect(() => {
-        const playSound = async () => {
-            const { sound } = await Audio(data.audio_url);
-            setSound(sound);
-            await sound.playAsync();
-        }
-        playSound();
-    }, [data.id]);
-
     return (
         <QuestionsWrapper>
             <h5>
                 {data.question}
             </h5>
+            <ReactAudioPlayer 
+                src={data.audio_url}
+                autoPlay={true}
+            />
             <QuestionsLayout>
                 <Answer answerIndex={1} />
                 <Answer answerIndex={2} />
