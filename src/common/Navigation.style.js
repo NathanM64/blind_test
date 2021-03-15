@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom'
-export const NavBar = styled.div`
 
+export const NavBar = styled.div`
     background: #309ACC;
     height: 4em;
     display: flex;
@@ -14,6 +14,7 @@ export const NavBar = styled.div`
 `
 export const NameApp = styled(Link)`
     display: flex;
+    transition: 0.25s;
     flex-direction: row;
     align-items: center;
 
@@ -38,6 +39,7 @@ export const NavActionLink = styled.div`
 `
 export const NavLink = styled(Link)`
     padding: 15px;
+    transition: 0.25s;
     margin: 15px;
     border-radius: 5px;
     :hover {
@@ -47,6 +49,7 @@ export const NavLink = styled(Link)`
 `
 export const NavSignOut = styled.div`
     padding: 5px;
+    transition: 0.25s;
     display: flex;
     border-radius: 5px;
     padding: 5px;
